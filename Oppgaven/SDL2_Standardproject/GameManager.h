@@ -23,7 +23,7 @@ public:
 
 	/* Kicks off/is the the gameloop */
 	void play();
-private:
+public:
 	GameManager();								// Hidden constructor
 	GameManager(const GameManager&);			// Hidden copy constructor
 	GameManager& operator=(const GameManager&); // Hidden assign operator
