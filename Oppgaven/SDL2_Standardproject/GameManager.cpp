@@ -35,10 +35,11 @@ void GameManager::play()
 	// Load bitmaps
 	SDLBmp backround	("Assets/gfx/bg_white.bmp");
 	//Load snake bitmaps
-	SDLBmp head_up		("Assets/gfx/Snake_head_up.bmp");
+	SDLBmp snakeHead	("Assets/gfx/Snake_head_right.bmp");
 	SDLBmp head_right	("Assets/gfx/Snake_head_right.bmp");
 	SDLBmp head_down	("Assets/gfx/Snake_head_down.bmp");
 	SDLBmp head_left	("Assets/gfx/Snake_head_left.bmp");
+	SDLBmp head_up		("Assets/gfx/Snake_head_up.bmp");
 
 	SDLBmp tail_up		("Assets/gfx/Snake_tail_up.bmp");
 	SDLBmp tail_right	("Assets/gfx/Snake_tail_right.bmp");
@@ -108,31 +109,35 @@ void GameManager::play()
 		if (m_lastRender >= render_fps)
 		{
 			float displacement = 20;//150.F * Timer::Instance().deltaTime();
-			std::cout << head_up.x << ", " << head_up.y << std::endl;
+			std::cout << snakeHead.x << ", " << snakeHead.y << std::endl;
 
 			switch (dir) {
-			case 1: head_up.x -= displacement; //Left
+			case 1: snakeHead.x -= displacement; //Left
+				snakeHead.m_texture = head_left.m_texture;
 				break;
-			case 2: head_up.y -= displacement; //Up
+			case 2: snakeHead.y -= displacement; //Up
+				snakeHead.m_texture = head_up.m_texture;
 				break;
-			case 3: head_up.x += displacement; //Right
+			case 3: snakeHead.x += displacement; //Right
+				snakeHead.m_texture = head_right.m_texture;
 				break;
-			case 4: head_up.y += displacement; //Down
+			case 4: snakeHead.y += displacement; //Down
+				snakeHead.m_texture = head_down.m_texture;
 				break;
-			default: head_up.x += displacement;
+			default: snakeHead.x += displacement;
 				break;
 			}
 
 			// Add bitmaps to renderer
 			backround.draw();
-			head_up.draw();
+			snakeHead.draw();
 
 			// Render window
 			SDLManager::Instance().renderWindow(m_window);
 			m_lastRender = 0.f;
 		}
 
-		if((head_up.x < 0 || head_up.x > 780) || (head_up.y < 0 || head_up.y > 580))
+		if((snakeHead.x < 0 || snakeHead.x > 780) || (snakeHead.y < 0 || snakeHead.y > 580))
 		{
 			notGameOver = false;
 		}
