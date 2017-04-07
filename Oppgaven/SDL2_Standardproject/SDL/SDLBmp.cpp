@@ -10,6 +10,7 @@
 #include <sstream>
 #include "SDLBmp.h"
 #include "SDLManager.h"
+#include <iostream>
 
 /* Loads the given file on construction */
 SDLBmp::SDLBmp(const std::string& file)

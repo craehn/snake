@@ -91,6 +91,7 @@
     <ClCompile Include="SDL\SDLBmp.cpp" />
     <ClCompile Include="SDL\SDLError.cpp" />
     <ClCompile Include="SDL\SDLManager.cpp" />
+    <ClCompile Include="Snake.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +104,7 @@
     <ClInclude Include="SDL\SDLManager.h" />
     <ClInclude Include="SDL\SDLMath.h" />
     <ClInclude Include="SDL\SDLWindow.h" />
+    <ClInclude Include="Snake.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
