@@ -84,18 +84,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bodypart.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SDL\SDLBmp.cpp" />
     <ClCompile Include="SDL\SDLError.cpp" />
     <ClCompile Include="SDL\SDLManager.cpp" />
-    <ClCompile Include="Snake.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bodypart.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="resource.h" />
@@ -104,7 +101,6 @@
     <ClInclude Include="SDL\SDLManager.h" />
     <ClInclude Include="SDL\SDLMath.h" />
     <ClInclude Include="SDL\SDLWindow.h" />
-    <ClInclude Include="Snake.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>

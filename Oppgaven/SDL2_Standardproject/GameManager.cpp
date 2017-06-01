@@ -13,6 +13,7 @@
 #include "Bodypart.h"
 #include <iostream>
 #include <algorithm>
+#include "Snake.h"
 
 const int MAP_WIDTH		= 40;
 const int MAP_HEIGHT	= 30;
@@ -30,10 +31,10 @@ GameManager::GameManager()
 /* Kicks off/is the the gameloop */
 void GameManager::play()
 {
-	bool notGameOver = true;
+	bool GameOver = false;
 
 	// Load bitmaps
-	SDLBmp backround	("Assets/gfx/bg_white.bmp");
+	SDLBmp backround	("Assets/gfx/bg_sand.bmp");
 	//Load snake bitmaps
 	SDLBmp head			("Assets/gfx/Snake_head_right.bmp");
 	SDLBmp head_up		("Assets/gfx/Snake_head_up.bmp");
@@ -55,9 +56,11 @@ void GameManager::play()
 	float render_fps = 1.f / speed;
 	m_lastRender = render_fps; // set it to render immediately
 	int dir = 0;
+	head.x = 360;
+	head.y = 280;
 
 	// Gameloop
-	while (notGameOver)
+	while (!GameOver)
 	{
 		// Update input and deltatime
 		InputManager::Instance().Update();
@@ -119,7 +122,7 @@ void GameManager::play()
 		// Exit on [Esc], or window close (user X-ed out the window)
 		if (InputManager::Instance().hasExit() || InputManager::Instance().KeyDown(SDL_SCANCODE_ESCAPE))
 		{
-			notGameOver = false;
+			GameOver = true;
 		}
 
 		// Update time since last render
@@ -155,7 +158,7 @@ void GameManager::play()
 
 		if((head.x < 0 || head.x > 780) || (head.y < 0 || head.y > 580))
 		{
-			notGameOver = false;
+			GameOver = true;
 		}
 
 		// Sleep to prevent CPU exthaustion (1ms == 1000 frames per second)
