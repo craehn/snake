@@ -10,6 +10,7 @@
 #include "GameManager.h"
 #include "InputManager.h"
 #include "Timer.h"
+#include "Bodypart.h"
 #include <iostream>
 #include <algorithm>
 
@@ -26,7 +27,6 @@ GameManager::GameManager()
 	Timer::Instance().init();
 }
 
-
 /* Kicks off/is the the gameloop */
 void GameManager::play()
 {
@@ -35,11 +35,11 @@ void GameManager::play()
 	// Load bitmaps
 	SDLBmp backround	("Assets/gfx/bg_white.bmp");
 	//Load snake bitmaps
-	SDLBmp snakeHead	("Assets/gfx/Snake_head_right.bmp");
+	SDLBmp head			("Assets/gfx/Snake_head_right.bmp");
+	SDLBmp head_up		("Assets/gfx/Snake_head_up.bmp");
 	SDLBmp head_right	("Assets/gfx/Snake_head_right.bmp");
 	SDLBmp head_down	("Assets/gfx/Snake_head_down.bmp");
 	SDLBmp head_left	("Assets/gfx/Snake_head_left.bmp");
-	SDLBmp head_up		("Assets/gfx/Snake_head_up.bmp");
 
 	SDLBmp tail_up		("Assets/gfx/Snake_tail_up.bmp");
 	SDLBmp tail_right	("Assets/gfx/Snake_tail_right.bmp");
@@ -72,6 +72,11 @@ void GameManager::play()
 		if ((InputManager::Instance().KeyDown(SDL_SCANCODE_LEFT) ||
 			InputManager::Instance().KeyStillDown(SDL_SCANCODE_LEFT)) && dir != 3)
 		{
+			int x = head.x;
+			int y = head.y;
+			head = head_left;
+			head.x = x;
+			head.y = y;
 			dir = 1;
 		}
 		
@@ -79,6 +84,11 @@ void GameManager::play()
 		if ((InputManager::Instance().KeyDown(SDL_SCANCODE_RIGHT) ||
 			InputManager::Instance().KeyStillDown(SDL_SCANCODE_RIGHT)) && dir != 1)
 		{
+			int x = head.x;
+			int y = head.y;
+			head = head_right;
+			head.x = x;
+			head.y = y;
 			dir = 3;
 		}
 
@@ -86,6 +96,11 @@ void GameManager::play()
 		if ((InputManager::Instance().KeyDown(SDL_SCANCODE_UP) ||
 			InputManager::Instance().KeyStillDown(SDL_SCANCODE_UP)) && dir != 4)
 		{
+			int x = head.x;
+			int y = head.y;
+			head = head_up;
+			head.x = x;
+			head.y = y;
 			dir = 2;
 		}
 
@@ -93,6 +108,11 @@ void GameManager::play()
 		if ((InputManager::Instance().KeyDown(SDL_SCANCODE_DOWN) ||
 			InputManager::Instance().KeyStillDown(SDL_SCANCODE_DOWN)) && dir != 2)
 		{
+			int x = head.x;
+			int y = head.y;
+			head = head_down;
+			head.x = x;
+			head.y = y;
 			dir = 4;
 		}
 
@@ -108,36 +128,32 @@ void GameManager::play()
 		// Check if it's time to render
 		if (m_lastRender >= render_fps)
 		{
-			float displacement = 20;//150.F * Timer::Instance().deltaTime();
-			std::cout << snakeHead.x << ", " << snakeHead.y << std::endl;
+			float displacement = 20;
+			std::cout << head.x << ", " << head.y << std::endl;
 
 			switch (dir) {
-			case 1: snakeHead.x -= displacement; //Left
-				snakeHead.m_texture = head_left.m_texture;
+			case 1: head.x -= displacement; //Left
 				break;
-			case 2: snakeHead.y -= displacement; //Up
-				snakeHead.m_texture = head_up.m_texture;
+			case 2: head.y -= displacement; //Up
 				break;
-			case 3: snakeHead.x += displacement; //Right
-				snakeHead.m_texture = head_right.m_texture;
+			case 3: head.x += displacement; //Right
 				break;
-			case 4: snakeHead.y += displacement; //Down
-				snakeHead.m_texture = head_down.m_texture;
+			case 4: head.y += displacement; //Down
 				break;
-			default: snakeHead.x += displacement;
+			default: head.x += displacement;
 				break;
 			}
 
 			// Add bitmaps to renderer
 			backround.draw();
-			snakeHead.draw();
+			head.draw();
 
 			// Render window
 			SDLManager::Instance().renderWindow(m_window);
 			m_lastRender = 0.f;
 		}
 
-		if((snakeHead.x < 0 || snakeHead.x > 780) || (snakeHead.y < 0 || snakeHead.y > 580))
+		if((head.x < 0 || head.x > 780) || (head.y < 0 || head.y > 580))
 		{
 			notGameOver = false;
 		}
