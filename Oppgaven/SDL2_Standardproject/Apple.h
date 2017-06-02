@@ -16,6 +16,8 @@ public:
 	SDLBmp* getImage();
 	void setImage(SDLBmp* img);
 	void setCoordinates();
+	int prevX;
+	int prevY;
 
 private:
 	SDLBmp* image;
