@@ -32,7 +32,14 @@ private:
 	
 	unsigned int m_window; // pointer to main window
 	float m_lastRender; // Time in seconds since last render
+	
+	//Egna tillägg
 	int snakeLength;
+	std::vector<Bodypart> snake;
+	void setNextPos();
+	void setDisplacement(int dir);
+	void drawSnake();
+	void addBodypart(Bodypart body);
 };
 
 #endif

@@ -5,8 +5,8 @@ Bodypart::Bodypart(int x, int y, SDLBmp* img)
 	this->posX = x;
 	this->posY = y;
 
-	this->prevX = x;
-	this->prevY = y;
+	this->nextX = x;
+	this->nextY = y;
 
 	image = img;
 	rotation = 0;
@@ -30,4 +30,9 @@ void Bodypart::setImage(SDLBmp* img) {
 void Bodypart::setRotation(int rot)
 {
 	rotation = rot;
+}
+
+void Bodypart::setParent(Bodypart* par)
+{
+	par = parent;
 }

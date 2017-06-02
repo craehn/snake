@@ -1,6 +1,7 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SDL2_Standardproject.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Apple.cpp
   GameManager.cpp
+<<<<<<< HEAD
 d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\apple.cpp(21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data (compiling source file Apple.cpp)
 d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\apple.cpp(22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data (compiling source file Apple.cpp)
 d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(77): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
@@ -25,3 +26,17 @@ d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardpr
 d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(144): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
 d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(146): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
   SDL2_Standardproject.vcxproj -> D:\Westerdals\2 år\PG440 - C++ programmering\GIt\snake\Oppgaven\Debug\Oppgaven.exe
+=======
+  Main.cpp
+  Snake.cpp
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(129): warning C4018: '<': signed/unsigned mismatch
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(140): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(143): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(146): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(149): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(152): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(159): warning C4018: '<': signed/unsigned mismatch
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(163): warning C4018: '<': signed/unsigned mismatch
+  SDL2_Standardproject.vcxproj -> E:\SKOLA\Cplusplus\Oppgaven\snake\Oppgaven\Debug\Oppgaven.exe
+  SDL2_Standardproject.vcxproj -> E:\SKOLA\Cplusplus\Oppgaven\snake\Oppgaven\Debug\Oppgaven.pdb (Full PDB)
+>>>>>>> origin/master

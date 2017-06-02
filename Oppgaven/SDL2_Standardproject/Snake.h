@@ -5,8 +5,8 @@
 #include <string>
 #include <vector>
 #include "SDL/SDLBmp.h"
-#include <list>
 #include "Bodypart.h"
+#include <list>
 
 class Snake : std::vector<Bodypart>
 {
@@ -16,6 +16,8 @@ public:
 	int length;
 	Bodypart* snakeHead;
 	Bodypart* snakeBody;
+
+	Bodypart* getBodyPart(int i);
 	void addBodypart();
 	int getLength();
 };
