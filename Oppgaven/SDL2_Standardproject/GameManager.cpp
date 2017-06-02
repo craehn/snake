@@ -46,12 +46,14 @@ void GameManager::play()
 	Bodypart snakeHead(360, 260, &head);
 	Bodypart snakeBody(360, 260, &body);
 
+	//Snake snake (&snakeHead, &snakeBody);
+
 	Apple apple(&app);
 	apple.setCoordinates();
 
 	snake.push_back(snakeHead);
-	snake.push_back(snakeBody);
-	snake.push_back(snakeBody);
+	addBodypart(snakeBody);
+	addBodypart(snakeBody); 
 
 	// Calculate render frames per second (second / frames) (60)
 	float render_fps = 1.f / speed;
@@ -158,7 +160,6 @@ void GameManager::setNextPos()
 void GameManager::setDisplacement(int dir)
 {
 	float displacement = 20;
-	//std::cout << snake[0].posX << ", " << snake[0].posY << std::endl;
 	switch (dir) {
 	case 1: snake[0].posX -= displacement; //Left
 			snake[0].setRotation(180);

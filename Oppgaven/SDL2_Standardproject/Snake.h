@@ -8,7 +8,7 @@
 #include "Bodypart.h"
 #include <list>
 
-class Snake : std::vector<Bodypart>
+class Snake
 {
 public:
 	Snake(Bodypart* head, Bodypart* body);
@@ -17,9 +17,11 @@ public:
 	Bodypart* snakeHead;
 	Bodypart* snakeBody;
 
-	Bodypart* getBodyPart(int i);
-	void addBodypart();
-	int getLength();
+	std::vector<Bodypart*> snake;
+	void setNextPos();
+	void setDisplacement(int dir);
+	void drawSnake();
+	void addBodypart(Bodypart* body);
 };
 
 #endif
