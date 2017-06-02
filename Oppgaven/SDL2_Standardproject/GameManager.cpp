@@ -1,7 +1,8 @@
 /*
  * @file: GameManager.cpp
- * @author: Stig M. Halvorsen <halsti@nith.no>
- * @version: 1.0.0 <11.02.2013>
+ * @author: Silje Lilleeng Johnsen og Sven Craehn
+ * based on original code by Stig M. Halvorsen 
+ * @version: Exam - Spring 2017
  *
  * @description: A singleton class to control all gameplay.
  */
@@ -14,6 +15,7 @@
 #include <iostream>
 #include <algorithm>
 #include "Snake.h"
+#include "Apple.h"
 
 const int MAP_WIDTH		= 40;
 const int MAP_HEIGHT	= 30;
@@ -44,6 +46,8 @@ void GameManager::play()
 	SDLBmp tail_left	("Assets/gfx/Snake_tail_left.bmp");
 
 	SDLBmp body			("Assets/gfx/snake_body.bmp");
+
+	SDLBmp apple		("Assets/gfx/apple.bmp");
 
 	Bodypart snakeHead(360, 260, &head);
 	Bodypart snakeBody(340, 260, &body);
@@ -147,6 +151,7 @@ void GameManager::play()
 			backround.draw();
 			//head.draw();
 			snakeHead.getImage()->draw(snakeHead.rotation);
+			apple.draw();
 
 			// Render window
 			SDLManager::Instance().renderWindow(m_window);

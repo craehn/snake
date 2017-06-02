@@ -1,25 +1,27 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SDL2_Standardproject.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Apple.cpp
   GameManager.cpp
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(73): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(74): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(76): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(85): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(86): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(88): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(89): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(97): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(98): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(100): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(101): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(109): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(110): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(112): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(113): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(133): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(136): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(138): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(140): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(142): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-  SDL2_Standardproject.vcxproj -> E:\SKOLA\Cplusplus\Oppgaven\snake\Oppgaven\Debug\Oppgaven.exe
-  SDL2_Standardproject.vcxproj -> E:\SKOLA\Cplusplus\Oppgaven\snake\Oppgaven\Debug\Oppgaven.pdb (Full PDB)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\apple.cpp(21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data (compiling source file Apple.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\apple.cpp(22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data (compiling source file Apple.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(77): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(78): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(80): warning C4244: '=': conversion from 'int' to 'float', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(81): warning C4244: '=': conversion from 'int' to 'float', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(89): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(90): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(92): warning C4244: '=': conversion from 'int' to 'float', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(93): warning C4244: '=': conversion from 'int' to 'float', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(101): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(102): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(104): warning C4244: '=': conversion from 'int' to 'float', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(105): warning C4244: '=': conversion from 'int' to 'float', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(113): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(114): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(116): warning C4244: '=': conversion from 'int' to 'float', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(117): warning C4244: '=': conversion from 'int' to 'float', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(137): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(140): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(142): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(144): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+d:\westerdals\2 år\pg440 - c++ programmering\git\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(146): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data (compiling source file GameManager.cpp)
+  SDL2_Standardproject.vcxproj -> D:\Westerdals\2 år\PG440 - C++ programmering\GIt\snake\Oppgaven\Debug\Oppgaven.exe
