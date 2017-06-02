@@ -32,32 +32,28 @@ GameManager::GameManager()
 void GameManager::play()
 {
 	bool GameOver = false;
-
+	
 	// Load bitmaps
 	SDLBmp backround	("Assets/gfx/bg_sand.bmp");
 	//Load snake bitmaps
-	SDLBmp head			("Assets/gfx/Snake_head_right.bmp");
-	SDLBmp head_up		("Assets/gfx/Snake_head_up.bmp");
-	SDLBmp head_right	("Assets/gfx/Snake_head_right.bmp");
-	SDLBmp head_down	("Assets/gfx/Snake_head_down.bmp");
-	SDLBmp head_left	("Assets/gfx/Snake_head_left.bmp");
+	SDLBmp head			("Assets/gfx/snakehead_right.bmp");
 
 	SDLBmp tail_up		("Assets/gfx/Snake_tail_up.bmp");
 	SDLBmp tail_right	("Assets/gfx/Snake_tail_right.bmp");
 	SDLBmp tail_down	("Assets/gfx/Snake_tail_down.bmp");
 	SDLBmp tail_left	("Assets/gfx/Snake_tail_left.bmp");
 
-	SDLBmp body_up		("Assets/gfx/Snake_body_up.bmp");
-	SDLBmp body_right	("Assets/gfx/Snake_body_right.bmp");
-	SDLBmp body_down	("Assets/gfx/Snake_body_down.bmp");
-	SDLBmp body_left	("Assets/gfx/Snake_body_left.bmp");
+	SDLBmp body			("Assets/gfx/snake_body.bmp");
+
+	Bodypart snakeHead(360, 260, &head);
+	Bodypart snakeBody(340, 260, &body);
+
+	Snake snake(&snakeHead, &snakeBody);
 
 	// Calculate render frames per second (second / frames) (60)
 	float render_fps = 1.f / speed;
 	m_lastRender = render_fps; // set it to render immediately
-	int dir = 0;
-	head.x = 360;
-	head.y = 280;
+	int dir = 3;
 
 	// Gameloop
 	while (!GameOver)
@@ -65,7 +61,6 @@ void GameManager::play()
 		// Update input and deltatime
 		InputManager::Instance().Update();
 		Timer::Instance().update();
-
 		// Calculate displacement based on deltatime
 
 
@@ -77,7 +72,7 @@ void GameManager::play()
 		{
 			int x = head.x;
 			int y = head.y;
-			head = head_left;
+			snakeHead.setRotation(-180);
 			head.x = x;
 			head.y = y;
 			dir = 1;
@@ -89,7 +84,7 @@ void GameManager::play()
 		{
 			int x = head.x;
 			int y = head.y;
-			head = head_right;
+			snakeHead.setRotation(0);
 			head.x = x;
 			head.y = y;
 			dir = 3;
@@ -101,7 +96,7 @@ void GameManager::play()
 		{
 			int x = head.x;
 			int y = head.y;
-			head = head_up;
+			snakeHead.setRotation(-90);
 			head.x = x;
 			head.y = y;
 			dir = 2;
@@ -113,7 +108,7 @@ void GameManager::play()
 		{
 			int x = head.x;
 			int y = head.y;
-			head = head_down;
+			snakeHead.setRotation(90);
 			head.x = x;
 			head.y = y;
 			dir = 4;
@@ -135,21 +130,23 @@ void GameManager::play()
 			std::cout << head.x << ", " << head.y << std::endl;
 
 			switch (dir) {
-			case 1: head.x -= displacement; //Left
+			case 1: snake.snakeHead->posX -= displacement;
+				//snakeHead.posX -= displacement; //Left
 				break;
-			case 2: head.y -= displacement; //Up
+			case 2: snakeHead.posY -= displacement; //Up
 				break;
-			case 3: head.x += displacement; //Right
+			case 3: snakeHead.posX += displacement; //Right
 				break;
-			case 4: head.y += displacement; //Down
+			case 4: snakeHead.posY += displacement; //Down
 				break;
-			default: head.x += displacement;
+			default: snakeHead.posX += displacement;
 				break;
 			}
 
 			// Add bitmaps to renderer
 			backround.draw();
-			head.draw();
+			//head.draw();
+			snakeHead.getImage()->draw(snakeHead.rotation);
 
 			// Render window
 			SDLManager::Instance().renderWindow(m_window);

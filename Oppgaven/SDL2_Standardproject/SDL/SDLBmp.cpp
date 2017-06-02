@@ -70,3 +70,11 @@ void SDLBmp::draw()
 	// Add object to renderer/window
 	SDL_RenderCopy(m_renderer, m_texture, NULL, &m_rect);
 }
+
+// Updates the image in the master window with rotation
+void SDLBmp::draw(int rotation) {
+	m_rect.x = static_cast<int>(x); // cast our floats to ints
+	m_rect.y = static_cast<int>(y);
+
+	SDL_RenderCopyEx(m_renderer, m_texture, nullptr, &m_rect, rotation, nullptr, SDL_FLIP_NONE);
+}

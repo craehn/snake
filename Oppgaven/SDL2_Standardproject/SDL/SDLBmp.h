@@ -30,6 +30,8 @@ public:
 	float x;
 	float y;
 
+	void SDLBmp::draw(int rotation);
+
 	SDL_Texture* m_texture; // Pixel data (on GPU)
 	SDL_Renderer* m_renderer; // Pointer to window's renderer.
 	SDL_Rect m_rect; // Used for w/h, placement and cropping.

@@ -1,24 +1,31 @@
 #ifndef BODYPART_H
 #define BODYPART_H
 
-#include <vector>
 #include <iostream>
+#include <string>
+#include <vector>
 #include "SDL/SDLBmp.h"
-#include "../packages/sdl2.2.0.5/build/native/include/SDL.h"
 
-class SDLBmp;
-
-class Bodypart {
+class Bodypart
+{
 public:
-	Bodypart(SDLBmp part);
-
+	Bodypart(int x, int y, SDLBmp* img);
 	~Bodypart();
+
 	int posX;
 	int posY;
-	int nextX;
-	int nextY;
 
-	Bodypart* AddPart(int x);
+	int prevX;
+	int prevY;
+
+	int rotation;
+
+	Bodypart* parent;
+	SDLBmp* getImage();
+	void setImage(SDLBmp* img);
+	void setRotation(int rot);
+private:
+	SDLBmp* image;
 };
 
-#endif // BODYPART_H
+#endif

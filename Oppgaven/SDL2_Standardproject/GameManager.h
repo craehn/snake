@@ -10,6 +10,8 @@
 #define GAMEMANAGER_H
 
 #include "SDL/SDLManager.h"
+#include "Snake.h"
+#include "Bodypart.h"
 
 class GameManager
 {
@@ -30,6 +32,7 @@ private:
 	
 	unsigned int m_window; // pointer to main window
 	float m_lastRender; // Time in seconds since last render
+	int snakeLength;
 };
 
 #endif

@@ -1,24 +1,29 @@
 #include "Snake.h"
 #include "Bodypart.h"
-#include "SDL/SDLBmp.h"
-#include "SDL/SDLManager.h"
 
-Snake::Snake() {
-	Snake::Init();
-}
-
-Snake::~Snake() {
-}
-
-void Snake::Init()
+Snake::Snake(Bodypart* head, Bodypart* body)
 {
-	head = new Bodypart(SDLBmp ("Assets/gfx/Snake_head_right.bmp"));
-	BodyList.push_back(head);
+	snakeHead = head;
+	snakeBody = body;
+	length = 3;
+	this->push_back(Bodypart(*snakeHead));
+	this->push_back(Bodypart(*snakeBody));
+	this->push_back(Bodypart(*snakeBody));
 
 
 }
 
-void Snake::AddBodypart()
+Snake::~Snake()
 {
+	
+}
 
+void Snake::addBodypart()
+{
+	
+}
+
+int Snake::getLength()
+{
+	return length;
 }

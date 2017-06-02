@@ -1,26 +1,23 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 
-#include <vector>
 #include <iostream>
-#include "../packages/sdl2.2.0.5/build/native/include/SDL.h"
+#include <string>
+#include <vector>
+#include "SDL/SDLBmp.h"
+#include <list>
 #include "Bodypart.h"
 
-class Bodypart;
-
-class Snake {
+class Snake : std::vector<Bodypart>
+{
 public:
-	Snake();
-
+	Snake(Bodypart* head, Bodypart* body);
 	~Snake();
-	std::vector<Snake*> SnakeList;
-	std::vector<Bodypart*> BodyList;
-
-	Bodypart* head;
-	Bodypart* tail;
-
-	void Init();
-	void AddBodypart();
+	int length;
+	Bodypart* snakeHead;
+	Bodypart* snakeBody;
+	void addBodypart();
+	int getLength();
 };
 
-#endif // SNAKE_H
+#endif
