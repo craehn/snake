@@ -15,8 +15,8 @@ public:
 	int posX;
 	int posY;
 
-	int prevX;
-	int prevY;
+	int nextX;
+	int nextY;
 
 	int rotation;
 
@@ -24,6 +24,7 @@ public:
 	SDLBmp* getImage();
 	void setImage(SDLBmp* img);
 	void setRotation(int rot);
+	void setParent(Bodypart* par);
 private:
 	SDLBmp* image;
 };

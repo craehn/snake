@@ -37,18 +37,14 @@ void GameManager::play()
 	SDLBmp backround	("Assets/gfx/bg_sand.bmp");
 	//Load snake bitmaps
 	SDLBmp head			("Assets/gfx/snakehead_right.bmp");
-
-	SDLBmp tail_up		("Assets/gfx/Snake_tail_up.bmp");
-	SDLBmp tail_right	("Assets/gfx/Snake_tail_right.bmp");
-	SDLBmp tail_down	("Assets/gfx/Snake_tail_down.bmp");
-	SDLBmp tail_left	("Assets/gfx/Snake_tail_left.bmp");
-
 	SDLBmp body			("Assets/gfx/snake_body.bmp");
 
 	Bodypart snakeHead(360, 260, &head);
-	Bodypart snakeBody(340, 260, &body);
+	Bodypart snakeBody(360, 260, &body);
 
-	Snake snake(&snakeHead, &snakeBody);
+	snake.push_back(snakeHead);
+	snake.push_back(snakeBody);
+	snake.push_back(snakeBody);
 
 	// Calculate render frames per second (second / frames) (60)
 	float render_fps = 1.f / speed;
@@ -61,8 +57,8 @@ void GameManager::play()
 		// Update input and deltatime
 		InputManager::Instance().Update();
 		Timer::Instance().update();
-		// Calculate displacement based on deltatime
 
+		setNextPos();
 
 		/* Input Management */
 
@@ -70,11 +66,6 @@ void GameManager::play()
 		if ((InputManager::Instance().KeyDown(SDL_SCANCODE_LEFT) ||
 			InputManager::Instance().KeyStillDown(SDL_SCANCODE_LEFT)) && dir != 3)
 		{
-			int x = head.x;
-			int y = head.y;
-			snakeHead.setRotation(-180);
-			head.x = x;
-			head.y = y;
 			dir = 1;
 		}
 		
@@ -82,11 +73,6 @@ void GameManager::play()
 		if ((InputManager::Instance().KeyDown(SDL_SCANCODE_RIGHT) ||
 			InputManager::Instance().KeyStillDown(SDL_SCANCODE_RIGHT)) && dir != 1)
 		{
-			int x = head.x;
-			int y = head.y;
-			snakeHead.setRotation(0);
-			head.x = x;
-			head.y = y;
 			dir = 3;
 		}
 
@@ -94,11 +80,6 @@ void GameManager::play()
 		if ((InputManager::Instance().KeyDown(SDL_SCANCODE_UP) ||
 			InputManager::Instance().KeyStillDown(SDL_SCANCODE_UP)) && dir != 4)
 		{
-			int x = head.x;
-			int y = head.y;
-			snakeHead.setRotation(-90);
-			head.x = x;
-			head.y = y;
 			dir = 2;
 		}
 
@@ -106,11 +87,6 @@ void GameManager::play()
 		if ((InputManager::Instance().KeyDown(SDL_SCANCODE_DOWN) ||
 			InputManager::Instance().KeyStillDown(SDL_SCANCODE_DOWN)) && dir != 2)
 		{
-			int x = head.x;
-			int y = head.y;
-			snakeHead.setRotation(90);
-			head.x = x;
-			head.y = y;
 			dir = 4;
 		}
 
@@ -126,34 +102,19 @@ void GameManager::play()
 		// Check if it's time to render
 		if (m_lastRender >= render_fps)
 		{
-			float displacement = 20;
-			std::cout << head.x << ", " << head.y << std::endl;
-
-			switch (dir) {
-			case 1: snake.snakeHead->posX -= displacement;
-				//snakeHead.posX -= displacement; //Left
-				break;
-			case 2: snakeHead.posY -= displacement; //Up
-				break;
-			case 3: snakeHead.posX += displacement; //Right
-				break;
-			case 4: snakeHead.posY += displacement; //Down
-				break;
-			default: snakeHead.posX += displacement;
-				break;
-			}
+			setDisplacement(dir);
 
 			// Add bitmaps to renderer
 			backround.draw();
-			//head.draw();
-			snakeHead.getImage()->draw(snakeHead.rotation);
+			drawSnake();
 
 			// Render window
 			SDLManager::Instance().renderWindow(m_window);
 			m_lastRender = 0.f;
 		}
 
-		if((head.x < 0 || head.x > 780) || (head.y < 0 || head.y > 580))
+		if((snake[0].posX < 0 || snake[0].posX > 780) || 
+			(snake[0].posY < 0 || snake[0].posY > 580))
 		{
 			GameOver = true;
 		}
@@ -161,4 +122,50 @@ void GameManager::play()
 		// Sleep to prevent CPU exthaustion (1ms == 1000 frames per second)
 		SDL_Delay(1);
 	}
+}
+
+void GameManager::setNextPos()
+{
+	for (int i = 1; i < snake.size(); i++) {
+		snake[i].nextX = snake[i - 1].posX;
+		snake[i].nextY = snake[i - 1].posY;
+	}
+}
+
+void GameManager::setDisplacement(int dir)
+{
+	float displacement = 20;
+	std::cout << snake[0].posX << ", " << snake[0].posY << std::endl;
+	switch (dir) {
+	case 1: snake[0].posX -= displacement; //Left
+			snake[0].setRotation(180);
+		break;
+	case 2: snake[0].posY -= displacement; //Up
+			snake[0].setRotation(270);
+		break;
+	case 3: snake[0].posX += displacement; //Right
+			snake[0].setRotation(0);
+		break;
+	case 4: snake[0].posY += displacement; //Down
+			snake[0].setRotation(90);
+		break;
+	default: snake[0].posX += displacement;
+		break;
+	}
+}
+
+void GameManager::drawSnake()
+{
+	for (int i = 1; i < snake.size(); i++) {
+		snake[i].posX = snake[i].nextX;
+		snake[i].posY = snake[i].nextY;
+	}
+	for (int i = 0; i < snake.size(); i++) {
+		snake[i].getImage()->draw(snake[i].rotation);
+	}
+}
+
+void GameManager::addBodypart(Bodypart body)
+{
+	snake.push_back(body);
 }
