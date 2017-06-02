@@ -16,6 +16,7 @@
 class GameManager
 {
 public:
+	bool StartGame;
 	/* Meyer's singleton style instance call */
 	static GameManager& Instance()
 	{

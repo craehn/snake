@@ -14,7 +14,6 @@
 #include "Bodypart.h"
 #include <iostream>
 #include <algorithm>
-#include "Snake.h"
 #include "Apple.h"
 
 const int MAP_WIDTH		= 40;
@@ -45,8 +44,6 @@ void GameManager::play()
 
 	Bodypart snakeHead(360, 260, &head);
 	Bodypart snakeBody(360, 260, &body);
-
-	//Snake snake (&snakeHead, &snakeBody);
 
 	Apple apple(&app);
 	apple.setCoordinates();
@@ -143,7 +140,7 @@ void GameManager::play()
 				GameOver = true;
 			}
 		}
-
+		
 		// Sleep to prevent CPU exthaustion (1ms == 1000 frames per second)
 		SDL_Delay(1);
 	}

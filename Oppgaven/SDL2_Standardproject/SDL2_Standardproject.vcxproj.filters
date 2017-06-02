@@ -31,6 +31,9 @@
     <ClCompile Include="SDL\SDLBmp.cpp">
       <Filter>Source\SDL</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Apple.h">
@@ -68,6 +71,9 @@
     </ClInclude>
     <ClInclude Include="SDL\SDLWindow.h">
       <Filter>Header\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
