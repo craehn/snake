@@ -41,7 +41,7 @@ void GameManager::play()
 	SDLBmp head			("Assets/gfx/snakehead_right.bmp");
 	SDLBmp body			("Assets/gfx/snake_body.bmp");
 
-	SDLBmp app		("Assets/gfx/apple.bmp");
+	SDLBmp app			("Assets/gfx/apple.bmp");
 
 	Bodypart snakeHead(360, 260, &head);
 	Bodypart snakeBody(360, 260, &body);
@@ -113,8 +113,8 @@ void GameManager::play()
 
 			// Add bitmaps to renderer
 			backround.draw();
-			apple.getImage()->draw();
 			drawSnake();
+			apple.getImage()->draw();
 
 			// Render window
 			SDLManager::Instance().renderWindow(m_window);
@@ -131,6 +131,15 @@ void GameManager::play()
 			score += 10;
 			addBodypart(snakeBody);
 			apple.setCoordinates();
+			std::cout << "Score: " << score << std::endl;
+		}
+
+		for (int i = 1; i < snake.size(); i++)
+		{
+			if (snake[0].posX == snake[i].posX && snake[0].posY == snake[i].posY)
+			{
+				GameOver = true;
+			}
 		}
 
 		// Sleep to prevent CPU exthaustion (1ms == 1000 frames per second)
@@ -149,7 +158,7 @@ void GameManager::setNextPos()
 void GameManager::setDisplacement(int dir)
 {
 	float displacement = 20;
-	std::cout << snake[0].posX << ", " << snake[0].posY << std::endl;
+	//std::cout << snake[0].posX << ", " << snake[0].posY << std::endl;
 	switch (dir) {
 	case 1: snake[0].posX -= displacement; //Left
 			snake[0].setRotation(180);

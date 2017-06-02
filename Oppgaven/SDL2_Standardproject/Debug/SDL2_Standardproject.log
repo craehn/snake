@@ -1,3 +1,13 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SDL2_Standardproject.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  GameManager.cpp
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(137): warning C4018: '<': signed/unsigned mismatch
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(152): warning C4018: '<': signed/unsigned mismatch
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(163): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(166): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(169): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(172): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(175): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(182): warning C4018: '<': signed/unsigned mismatch
+e:\skola\cplusplus\oppgaven\snake\oppgaven\sdl2_standardproject\gamemanager.cpp(186): warning C4018: '<': signed/unsigned mismatch
   SDL2_Standardproject.vcxproj -> E:\SKOLA\Cplusplus\Oppgaven\snake\Oppgaven\Debug\Oppgaven.exe
   SDL2_Standardproject.vcxproj -> E:\SKOLA\Cplusplus\Oppgaven\snake\Oppgaven\Debug\Oppgaven.pdb (Full PDB)

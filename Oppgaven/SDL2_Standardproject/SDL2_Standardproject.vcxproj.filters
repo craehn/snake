@@ -1,30 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Apple.cpp" />
-    <ClCompile Include="Bodypart.cpp" />
-    <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="InputManager.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="SDL\SDLBmp.cpp" />
-    <ClCompile Include="SDL\SDLError.cpp" />
-    <ClCompile Include="SDL\SDLManager.cpp" />
-    <ClCompile Include="Snake.cpp" />
-    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Apple.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Bodypart.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Snake.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL\SDLManager.cpp">
+      <Filter>Source\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL\SDLError.cpp">
+      <Filter>Source\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL\SDLBmp.cpp">
+      <Filter>Source\SDL</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Apple.h" />
-    <ClInclude Include="Bodypart.h" />
-    <ClInclude Include="GameManager.h" />
-    <ClInclude Include="InputManager.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="SDL\SDLBmp.h" />
-    <ClInclude Include="SDL\SDLError.h" />
-    <ClInclude Include="SDL\SDLManager.h" />
-    <ClInclude Include="SDL\SDLMath.h" />
-    <ClInclude Include="SDL\SDLWindow.h" />
-    <ClInclude Include="Snake.h" />
-    <ClInclude Include="Timer.h" />
+    <ClInclude Include="Apple.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Bodypart.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Snake.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\SDLBmp.h">
+      <Filter>Header\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\SDLError.h">
+      <Filter>Header\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\SDLManager.h">
+      <Filter>Header\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\SDLMath.h">
+      <Filter>Header\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\SDLWindow.h">
+      <Filter>Header\SDL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Oppgaven.rc" />
@@ -36,5 +80,19 @@
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header">
+      <UniqueIdentifier>{8022dc71-7fdb-4316-ab02-72c545ca09f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\SDL">
+      <UniqueIdentifier>{9ca16922-0156-4d02-80ef-7fa0e798ca48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{3baf6cd1-d68c-4bcf-a403-533e8439928a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\SDL">
+      <UniqueIdentifier>{bc7fa21c-f515-46e9-9515-61ce49f8e2c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
