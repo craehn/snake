@@ -34,6 +34,7 @@ private:
 	float m_lastRender; // Time in seconds since last render
 	
 	//Egna tillägg
+	int score = 0;
 	int snakeLength;
 	std::vector<Bodypart> snake;
 	void setNextPos();

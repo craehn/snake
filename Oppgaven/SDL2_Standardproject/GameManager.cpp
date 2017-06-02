@@ -1,7 +1,8 @@
 /*
  * @file: GameManager.cpp
- * @author: Stig M. Halvorsen <halsti@nith.no>
- * @version: 1.0.0 <11.02.2013>
+ * @author: Silje Lilleeng Johnsen og Sven Craehn
+ * based on original code by Stig M. Halvorsen 
+ * @version: Exam - Spring 2017
  *
  * @description: A singleton class to control all gameplay.
  */
@@ -14,6 +15,7 @@
 #include <iostream>
 #include <algorithm>
 #include "Snake.h"
+#include "Apple.h"
 
 const int MAP_WIDTH		= 40;
 const int MAP_HEIGHT	= 30;
@@ -39,8 +41,13 @@ void GameManager::play()
 	SDLBmp head			("Assets/gfx/snakehead_right.bmp");
 	SDLBmp body			("Assets/gfx/snake_body.bmp");
 
+	SDLBmp app		("Assets/gfx/apple.bmp");
+
 	Bodypart snakeHead(360, 260, &head);
 	Bodypart snakeBody(360, 260, &body);
+
+	Apple apple(&app);
+	apple.setCoordinates();
 
 	snake.push_back(snakeHead);
 	snake.push_back(snakeBody);
@@ -106,6 +113,7 @@ void GameManager::play()
 
 			// Add bitmaps to renderer
 			backround.draw();
+			apple.getImage()->draw();
 			drawSnake();
 
 			// Render window
@@ -117,6 +125,12 @@ void GameManager::play()
 			(snake[0].posY < 0 || snake[0].posY > 580))
 		{
 			GameOver = true;
+		}
+		else if (snake[0].posX == apple.posX && snake[0].posY == apple.posY)
+		{
+			score += 10;
+			addBodypart(snakeBody);
+			apple.setCoordinates();
 		}
 
 		// Sleep to prevent CPU exthaustion (1ms == 1000 frames per second)

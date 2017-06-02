@@ -1,26 +1,28 @@
-/*
-* @file: Apple.cpp
-* @author: Silje Lilleeng Johnsen
-* @spring - 2017
-*
-* @description: Class for Apple "to be eaten" by class Snake
-*				One apple at a time, located at random positioning
-*				By coordinates
-*/
-
-#include <iostream>
 #include "Apple.h"
-#include "SDL/SDLBmp.h"
-#include "GameManager.h"
+#include <iostream>
+#include <string>
+#include <vector>
 
-
-Apple::Apple()
+Apple::Apple(SDLBmp * img)
 {
-	SDLBmp apple ("Assets/gfx/eple.bmp");
-
+	image = img;
 }
-
 
 Apple::~Apple()
 {
+}
+SDLBmp* Apple::getImage() {
+	image->x = this->posX;
+	image->y = this->posY;
+	return image;
+}
+
+void Apple::setImage(SDLBmp* img) {
+	image = img;
+}
+
+void Apple::setCoordinates()
+{
+	this->posX = (rand() % 39) * 20;
+	this->posY = (rand() % 29) * 20;
 }
