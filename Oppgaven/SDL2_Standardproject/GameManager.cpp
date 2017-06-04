@@ -119,11 +119,13 @@ void GameManager::play()
 			m_lastRender = 0.f;
 		}
 
+		//Checking the snakes position to see if he's out of bounds of the game stage
 		if((snake[0].posX < 0 || snake[0].posX > 780) || 
 			(snake[0].posY < 0 || snake[0].posY > 580))
 		{
 			GameOver = true;
 		}
+		//Checking if the snake has hit the apple
 		else if (snake[0].posX == apple.posX && snake[0].posY == apple.posY)
 		{
 			score += 10;
@@ -132,6 +134,7 @@ void GameManager::play()
 			apple.setCoordinates();
 
 			//If the apple turns up on the snakes body it should get new random coordinates before it's drawn.
+			//(not completely sure if it works as it should though...)
 			while (taken) {
 				for (int i = 0; i < snake.size(); i++) {
 					if (apple.posX == snake[i].posX && apple.posY == snake[i].posY) {
@@ -143,6 +146,7 @@ void GameManager::play()
 			std::cout << "Score: " << score << std::endl;
 		}
 
+		//Checking if the snake hit himself
 		for (int i = 1; i < snake.size(); i++)
 		{
 			if (snake[0].posX == snake[i].posX && snake[0].posY == snake[i].posY)
