@@ -1,4 +1,4 @@
-#ifndef SNAKE_H
+/*#ifndef SNAKE_H
 #define SNAKE_H
 
 #include <iostream>
@@ -24,4 +24,4 @@ public:
 	void addBodypart(Bodypart* body);
 };
 
-#endif
+#endif */

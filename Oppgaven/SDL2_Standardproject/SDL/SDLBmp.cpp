@@ -1,6 +1,7 @@
 /*
  * @file: SDLBmp.cpp
  * @author: Stig M. Halvorsen <halsti@nith.no>
+ * Edited by Sven Craehn and Silje Lilleeng Johnsen
  * @version: 1.0.0 <11.02.2013>
  *
  * @description: A class that makes it easy to load,

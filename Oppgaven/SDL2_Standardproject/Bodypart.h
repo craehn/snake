@@ -1,9 +1,13 @@
+/*
+* @file: Bodypart.cpp
+* @author: Silje Lilleeng Johnsen og Sven Craehn
+* @version: Exam - Spring 2017
+*
+* @description: A class for managing each bodypart of the snake.
+*/
 #ifndef BODYPART_H
 #define BODYPART_H
 
-#include <iostream>
-#include <string>
-#include <vector>
 #include "SDL/SDLBmp.h"
 
 class Bodypart
@@ -20,11 +24,9 @@ public:
 
 	int rotation;
 
-	Bodypart* parent;
 	SDLBmp* getImage();
 	void setImage(SDLBmp* img);
 	void setRotation(int rot);
-	void setParent(Bodypart* par);
 private:
 	SDLBmp* image;
 };

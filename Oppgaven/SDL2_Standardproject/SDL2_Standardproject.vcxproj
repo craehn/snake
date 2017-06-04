@@ -42,7 +42,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>E:\SKOLA\Cplusplus\snake\snakecplusplus\Oppgaven\packages\sdl2.2.0.5\build\native\lib\Win32\dynamic;D:\Westerdals\2 år\PG440 - C++ programmering\GIt\snake\Oppgaven\packages\sdl2.2.0.5\build\native\lib\Win32\dynamic;$(LibraryPath)</LibraryPath>
+    <LibraryPath>E:\SKOLA\Cplusplus\Oppgaven\snake\Oppgaven\packages\sdl_mixer\lib\x64;E:\SKOLA\Cplusplus\snake\snakecplusplus\Oppgaven\packages\sdl2.2.0.5\build\native\lib\Win32\dynamic;D:\Westerdals\2 år\PG440 - C++ programmering\GIt\snake\Oppgaven\packages\sdl2.2.0.5\build\native\lib\Win32\dynamic;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\SKOLA\Cplusplus\Oppgaven\snake\Oppgaven\packages\sdl_mixer\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -62,7 +63,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -93,7 +94,6 @@
     <ClCompile Include="SDL\SDLBmp.cpp" />
     <ClCompile Include="SDL\SDLError.cpp" />
     <ClCompile Include="SDL\SDLManager.cpp" />
-    <ClCompile Include="Snake.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +108,6 @@
     <ClInclude Include="SDL\SDLManager.h" />
     <ClInclude Include="SDL\SDLMath.h" />
     <ClInclude Include="SDL\SDLWindow.h" />
-    <ClInclude Include="Snake.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
@@ -116,7 +115,6 @@
     <Image Include="Assets\gfx\sdl_bro.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

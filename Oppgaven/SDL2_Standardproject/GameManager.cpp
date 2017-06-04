@@ -13,13 +13,13 @@
 #include "Timer.h"
 #include "Bodypart.h"
 #include <iostream>
-#include <algorithm>
 #include "Apple.h"
+#include <iomanip>
 
 const int MAP_WIDTH		= 40;
 const int MAP_HEIGHT	= 30;
 const int TOTAL_SIZE	= MAP_WIDTH * MAP_HEIGHT;
-float speed = 10.f;
+float speed = 15.f;
 
 /* Initializes SDL, creates the game window and fires off the timer. */
 GameManager::GameManager()
@@ -33,19 +33,18 @@ GameManager::GameManager()
 void GameManager::play()
 {
 	bool GameOver = false;
-	
+
 	// Load bitmaps
 	SDLBmp backround	("Assets/gfx/bg_sand.bmp");
-	//Load snake bitmaps
 	SDLBmp head			("Assets/gfx/snakehead_right.bmp");
 	SDLBmp body			("Assets/gfx/snake_body.bmp");
-
 	SDLBmp app			("Assets/gfx/apple.bmp");
 
+	//Create objects from bitmaps
 	Bodypart snakeHead(360, 260, &head);
 	Bodypart snakeBody(360, 260, &body);
-
 	Apple apple(&app);
+
 	apple.setCoordinates();
 
 	snake.push_back(snakeHead);
@@ -128,8 +127,19 @@ void GameManager::play()
 		else if (snake[0].posX == apple.posX && snake[0].posY == apple.posY)
 		{
 			score += 10;
+			bool taken = true;
 			addBodypart(snakeBody);
 			apple.setCoordinates();
+
+			//If the apple turns up on the snakes body it should get new random coordinates before it's drawn.
+			while (taken) {
+				for (int i = 0; i < snake.size(); i++) {
+					if (apple.posX == snake[i].posX && apple.posY == snake[i].posY) {
+						taken = true;
+						apple.setCoordinates();
+					} else taken = false;
+				}
+			}
 			std::cout << "Score: " << score << std::endl;
 		}
 
@@ -140,7 +150,7 @@ void GameManager::play()
 				GameOver = true;
 			}
 		}
-		
+
 		// Sleep to prevent CPU exthaustion (1ms == 1000 frames per second)
 		SDL_Delay(1);
 	}

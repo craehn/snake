@@ -1,6 +1,7 @@
 /*
  * @file: GameManager.h
- * @author: Stig M. Halvorsen <halsti@nith.no>
+ * @author: Silje Lilleeng Johnsen og Sven Craehn
+ * based on original code by Stig M. Halvorsen
  * @version: 1.0.0 <11.02.2013>
  *
  * @description: A singleton class to control all gameplay.

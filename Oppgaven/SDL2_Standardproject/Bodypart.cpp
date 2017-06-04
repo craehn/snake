@@ -1,3 +1,10 @@
+/*
+* @file: Bodypart.cpp
+* @author: Silje Lilleeng Johnsen og Sven Craehn
+* @version: Exam - Spring 2017
+*
+* @description: A class for managing each bodypart of the snake.
+*/
 #include "Bodypart.h"
 
 Bodypart::Bodypart(int x, int y, SDLBmp* img)
@@ -10,7 +17,6 @@ Bodypart::Bodypart(int x, int y, SDLBmp* img)
 
 	image = img;
 	rotation = 0;
-	parent = NULL;
 }
 
 Bodypart::~Bodypart()
@@ -30,9 +36,4 @@ void Bodypart::setImage(SDLBmp* img) {
 void Bodypart::setRotation(int rot)
 {
 	rotation = rot;
-}
-
-void Bodypart::setParent(Bodypart* par)
-{
-	par = parent;
 }

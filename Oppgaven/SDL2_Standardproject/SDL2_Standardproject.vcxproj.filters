@@ -16,9 +16,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Snake.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="Timer.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -51,9 +48,6 @@
     <ClInclude Include="resource.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Snake.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Timer.h">
       <Filter>Header</Filter>
     </ClInclude>
@@ -84,7 +78,6 @@
     <Image Include="Assets\gfx\sdl_bro.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

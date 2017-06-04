@@ -1,4 +1,4 @@
-#include "Snake.h"
+/*#include "Snake.h"
 #include "Bodypart.h"
 #include <iterator>
 
@@ -56,4 +56,4 @@ void Snake::drawSnake() {
 
 void Snake::addBodypart(Bodypart* body) {
 	snake.push_back(body);
-}
+} */
